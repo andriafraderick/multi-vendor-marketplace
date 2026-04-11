@@ -1,0 +1,119 @@
+# ═══════════════════════════════════════════════════════════════
+# SECRETS — NEVER COMMIT THESE (most critical)
+# ═══════════════════════════════════════════════════════════════
+.env
+.env.local
+.env.production
+.env.staging
+.env.development
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+*.cert
+*.crt
+secrets.json
+local_settings.py
+
+# ═══════════════════════════════════════════════════════════════
+# PYTHON / DJANGO
+# ═══════════════════════════════════════════════════════════════
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.tox/
+.cache/
+.pytest_cache/
+htmlcov/
+.coverage
+*.cover
+.hypothesis/
+
+# Virtual environment — NEVER commit this
+venv/
+env/
+ENV/
+.venv/
+venv.bak/
+
+# Django specific
+*.sqlite3
+db.sqlite3
+db.sqlite3-journal
+staticfiles/
+mediafiles/
+media/
+collected_static/
+
+# ═══════════════════════════════════════════════════════════════
+# NODE / REACT / VITE
+# ═══════════════════════════════════════════════════════════════
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnp
+.pnp.js
+
+# Build output
+frontend/dist/
+frontend/build/
+.vite/
+
+# ═══════════════════════════════════════════════════════════════
+# IDE / EDITORS
+# ═══════════════════════════════════════════════════════════════
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ═══════════════════════════════════════════════════════════════
+# OPERATING SYSTEM
+# ═══════════════════════════════════════════════════════════════
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ═══════════════════════════════════════════════════════════════
+# LOGS
+# ═══════════════════════════════════════════════════════════════
+*.log
+logs/
+npm-debug.log
+yarn-debug.log
+
+# ═══════════════════════════════════════════════════════════════
+# DEPLOYMENT CONFIGS (contain secrets)
+# ═══════════════════════════════════════════════════════════════
+.vercel/
+.render/
+.netlify/
+
+# ═══════════════════════════════════════════════════════════════
+# CERTIFICATES & KEYS
+# ═══════════════════════════════════════════════════════════════
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.crt
