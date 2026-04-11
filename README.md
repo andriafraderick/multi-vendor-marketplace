@@ -1059,7 +1059,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## 👤 Author
 
-**Your Name**
+**Andria Fraderick**
 - GitHub: https://github.com/andriafraderick
 - LinkedIn: https://www.linkedin.com/in/andriafraderick/
 
