@@ -125,166 +125,311 @@ Built with a dark glassmorphism UI inspired by Vision UI Dashboard, featuring ho
 
 marketplace/
 ├── .gitignore
+
 ├── README.md
+
 │
+
 ├── backend/                          # Django REST API
+
 │   ├── manage.py
+
 │   ├── requirements.txt
+
 │   ├── .env.example                  # Environment template
+
 │   ├── render.yaml                   # Render deployment config
+
 │   │
 │   ├── core/                         # Django project config
+
 │   │   ├── settings.py               # All settings (env-driven)
+
 │   │   ├── urls.py                   # Root URL routing
 │   │   ├── wsgi.py
+
 │   │   └── asgi.py
 │   │
 │   ├── accounts/                     # User auth & profiles
+
 │   │   ├── models.py                 # User, Address, Tokens
+
 │   │   ├── serializers.py            # Auth serializers
+
 │   │   ├── views.py                  # Auth endpoints
+
 │   │   ├── urls.py                   # Auth URL routing
+
 │   │   ├── permissions.py            # RBAC permission classes
+
 │   │   ├── emails.py                 # Transactional emails
+
 │   │   └── admin.py                  # Custom user admin
 │   │
+
 │   ├── vendors/                      # Vendor management
+
 │   │   ├── models.py                 # VendorProfile, Commission, Payouts
+
 │   │   ├── serializers.py
+
 │   │   ├── views.py
+
 │   │   ├── urls.py
+
 │   │   └── admin.py
+
 │   │
 │   ├── products/                     # Product catalog
+
 │   │   ├── models.py                 # Category, Product, Images, Variants
+
 │   │   ├── serializers.py
+
 │   │   ├── views.py
+
 │   │   ├── urls.py
+
 │   │   ├── filters.py                # Django-filter filterset
+
 │   │   └── admin.py
+
 │   │
 │   ├── orders/                       # Cart, checkout & orders
+
 │   │   ├── models.py                 # Cart, Order, VendorOrder, OrderItem
+
 │   │   ├── serializers.py
+
 │   │   ├── views.py
+
 │   │   ├── urls.py
+
 │   │   ├── services.py               # Order distribution logic
+
 │   │   ├── filters.py
+
 │   │   └── admin.py
+
 │   │
 │   ├── reviews/                      # Reviews & moderation
+
 │   │   ├── models.py                 # ProductReview, VendorReview, Flags
+
 │   │   ├── serializers.py
+
 │   │   ├── views.py
+
 │   │   ├── urls.py
+
 │   │   ├── filters.py
+
 │   │   └── admin.py
+
 │   │
 │   └── analytics/                    # Sales analytics
+
 │       ├── models.py                 # DailySalesSnapshot, ProductViewLog
+
 │       ├── urls.py
+
 │       └── admin.py
+
 │
 └── frontend/                         # React + Vite SPA
+
 ├── index.html
+
 ├── package.json
+
 ├── vite.config.js
+
 ├── .env.example
+
 │
 └── src/
+
 ├── main.jsx                  # App entry point
+
 ├── index.css                 # Global styles & CSS variables
+
 │
 ├── theme/                    # MUI theme customization
+
 │   ├── index.js              # Theme creation
+
 │   ├── palette.js            # Color palette
+
 │   ├── typography.js         # Font settings
+
 │   └── components.js         # Component overrides
+
 │
 ├── store/                    # Redux store
+
 │   ├── index.js              # Store configuration
+
 │   ├── slices/
+
 │   │   ├── authSlice.js      # Auth state + localStorage sync
+
 │   │   ├── cartSlice.js      # Cart drawer state
+
 │   │   └── uiSlice.js        # Sidebar, page title
+
 │   └── api/
+
 │       ├── baseApi.js        # RTK Query base with auto token refresh
+
 │       ├── authApi.js        # Auth endpoints
+
 │       ├── productApi.js     # Product endpoints
+
 │       ├── orderApi.js       # Order & cart endpoints
+
 │       ├── reviewApi.js      # Review endpoints
+
 │       └── vendorApi.js      # Vendor endpoints
+
 │
 ├── routes/
+
 │   ├── index.jsx             # All routes with lazy loading
+
 │   ├── ProtectedRoute.jsx    # Redirect unauthenticated users
+
 │   └── RoleRoute.jsx         # Redirect unauthorized roles
+
 │
 ├── layouts/
+
 │   ├── MainLayout.jsx        # Public pages (Navbar + content)
+
 │   ├── DashboardLayout.jsx   # Dashboard (Sidebar + Navbar + content)
+
 │   └── AuthLayout.jsx        # Auth pages (centered card)
+
 │
 ├── components/
+
 │   ├── ui/                   # Reusable UI primitives
+
 │   │   ├── GlassCard.jsx     # Glassmorphism card
+
 │   │   ├── GradientButton.jsx
+
 │   │   ├── StarRating.jsx
+
 │   │   ├── LoadingSpinner.jsx
+
 │   │   ├── EmptyState.jsx
+
 │   │   └── Pagination.jsx
+
 │   ├── navbar/
+
 │   │   ├── Navbar.jsx        # Top navigation bar
+
 │   │   └── CartDrawer.jsx    # Slide-out cart
+
 │   ├── sidebar/
+
 │   │   ├── Sidebar.jsx       # Collapsible dashboard sidebar
+
 │   │   └── SidebarItem.jsx   # Individual nav item
+
 │   ├── product/
+
 │   │   ├── ProductCard.jsx   # Product listing card
+
 │   │   ├── ProductFilters.jsx
+
 │   │   └── ProductImageGallery.jsx
+
 │   ├── charts/
+
 │   │   ├── RevenueChart.jsx  # Line chart
+
 │   │   ├── OrderStatusChart.jsx # Doughnut chart
+
 │   │   └── TopProductsChart.jsx # Horizontal bar chart
+
 │   ├── vendor/
+
 │   │   ├── OrderStatusBadge.jsx
+
 │   │   └── ProductFormModal.jsx
+
 │   └── admin/
+
 │       ├── StatCard.jsx
+
 │       ├── AdminDataTable.jsx
+
 │       └── ConfirmDialog.jsx
+
 │
 └── pages/
+
 ├── auth/
+
 │   ├── LoginPage.jsx
+
 │   └── RegisterPage.jsx  # Buyer / Vendor toggle
+
 ├── buyer/
+
 │   ├── HomePage.jsx      # Hero + featured products
+
 │   ├── ProductsPage.jsx  # Browse with filters
+
 │   ├── ProductDetailPage.jsx
+
 │   ├── VendorsPage.jsx
+
 │   ├── VendorStorePage.jsx
+
 │   ├── CartPage.jsx
+
 │   ├── CheckoutPage.jsx
+
 │   ├── OrderSuccessPage.jsx
+
 │   └── OrderHistoryPage.jsx
+
+
 ├── vendor/
+
 │   ├── VendorDashboardPage.jsx
+
 │   ├── VendorProductsPage.jsx
+
 │   ├── VendorOrdersPage.jsx
+
 │   ├── VendorAnalyticsPage.jsx
+
 │   ├── VendorReviewsPage.jsx
+
 │   ├── VendorPayoutsPage.jsx
+
 │   └── VendorSettingsPage.jsx
+
 └── admin/
+
 ├── AdminDashboardPage.jsx
+
 ├── AdminVendorsPage.jsx
+
 ├── AdminProductsPage.jsx
+
 ├── AdminOrdersPage.jsx
+
 ├── AdminReviewsPage.jsx
+
 ├── AdminUsersPage.jsx
+
 └── AdminSettingsPage.jsx
+
 
 ---
 
