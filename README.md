@@ -855,6 +855,7 @@ ALLOWED_HOSTS=your-api-name.onrender.com
    - `VITE_API_BASE_URL` = `https://your-api-name.onrender.com/api/v1`
    - `VITE_STRIPE_PUBLIC_KEY` = your Stripe public key
 5. Click **Deploy**
+6. https://multi-vendor-marketplace-wheat.vercel.app/
 
 ---
 
