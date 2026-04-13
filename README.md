@@ -814,6 +814,7 @@ databases:
 4. Set Root Directory to `backend`
 5. Add all environment variables from your `.env` file
 6. Click **Deploy**
+7. https://marketplace-api-rt5x.onrender.com
 
 #### 3. After deploy — update CORS
 
